@@ -1,0 +1,191 @@
+export default function PizzaStandWebsite() { return ( <div className="min-h-screen bg-black text-white font-sans"> {/* Hero Section */} <section className="relative h-screen bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1400&auto=format&fit=crop')", }} > <div className="absolute inset-0 bg-black/70"></div>
+
+<div className="relative z-10 flex flex-col items-center justify-center h-full text-center px-6">
+      <h1 className="text-5xl md:text-7xl font-extrabold text-yellow-400 drop-shadow-lg">
+        Pizza Stand
+      </h1>
+      <p className="text-xl md:text-3xl mt-4 text-gray-200">
+        Restaurant & Cafe
+      </p>
+
+      <p className="mt-6 max-w-2xl text-lg text-gray-300 leading-relaxed">
+        Pizza • Chinese • Indian Food • Mocktails • Coffee
+      </p>
+
+      <div className="mt-10 flex gap-4 flex-wrap justify-center">
+        <button className="bg-red-600 hover:bg-red-700 px-8 py-3 rounded-2xl text-lg font-semibold shadow-xl transition">
+          Order Now
+        </button>
+
+        <button className="border border-yellow-400 text-yellow-400 hover:bg-yellow-400 hover:text-black px-8 py-3 rounded-2xl text-lg font-semibold transition">
+          View Menu
+        </button>
+      </div>
+    </div>
+  </section>
+
+  {/* About */}
+  <section className="py-20 px-6 md:px-16 bg-zinc-950">
+    <div className="grid md:grid-cols-2 gap-10 items-center">
+      <img
+        src="https://images.unsplash.com/photo-1552566626-52f8b828add9?q=80&w=1200&auto=format&fit=crop"
+        alt="Restaurant"
+        className="rounded-3xl shadow-2xl"
+      />
+
+      <div>
+        <h2 className="text-4xl font-bold text-yellow-400 mb-6">
+          Welcome To Pizza Stand
+        </h2>
+
+        <p className="text-gray-300 text-lg leading-8">
+          Pizza Stand Restaurant & Cafe brings delicious taste with a cozy
+          cafe vibe. Enjoy pizza, Indian food, Chinese dishes, mocktails,
+          coffee and much more with friends & family.
+        </p>
+
+        <div className="mt-8 grid grid-cols-2 gap-4">
+          <div className="bg-zinc-900 p-5 rounded-2xl border border-zinc-800">
+            <h3 className="text-2xl font-bold text-red-500">50+</h3>
+            <p className="text-gray-400">Food Items</p>
+          </div>
+
+          <div className="bg-zinc-900 p-5 rounded-2xl border border-zinc-800">
+            <h3 className="text-2xl font-bold text-yellow-400">Fresh</h3>
+            <p className="text-gray-400">Quality Ingredients</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Menu */}
+  <section className="py-20 px-6 md:px-16 bg-black">
+    <div className="text-center mb-14">
+      <h2 className="text-4xl font-bold text-yellow-400">Our Special Menu</h2>
+      <p className="text-gray-400 mt-4">
+        Taste the best dishes from our kitchen
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {[
+        {
+          name: 'Pizza',
+          image:
+            'https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1200&auto=format&fit=crop',
+        },
+        {
+          name: 'Chinese',
+          image:
+            'https://images.unsplash.com/photo-1585032226651-759b368d7246?q=80&w=1200&auto=format&fit=crop',
+        },
+        {
+          name: 'Mocktails',
+          image:
+            'https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1200&auto=format&fit=crop',
+        },
+      ].map((item, index) => (
+        <div
+          key={index}
+          className="bg-zinc-950 rounded-3xl overflow-hidden shadow-xl border border-zinc-800 hover:scale-105 transition duration-300"
+        >
+          <img
+            src={item.image}
+            alt={item.name}
+            className="h-64 w-full object-cover"
+          />
+
+          <div className="p-6 text-center">
+            <h3 className="text-2xl font-bold text-white">{item.name}</h3>
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* Gallery */}
+  <section className="py-20 px-6 md:px-16 bg-zinc-950">
+    <div className="text-center mb-14">
+      <h2 className="text-4xl font-bold text-yellow-400">Food Gallery</h2>
+    </div>
+
+    <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {[
+        'https://images.unsplash.com/photo-1513104890138-7c749659a591?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1546069901-ba9599a7e63c?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?q=80&w=1200&auto=format&fit=crop',
+        'https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=1200&auto=format&fit=crop',
+      ].map((img, i) => (
+        <img
+          key={i}
+          src={img}
+          className="rounded-2xl h-52 w-full object-cover hover:scale-105 transition duration-300"
+        />
+      ))}
+    </div>
+  </section>
+
+  {/* Reviews */}
+  <section className="py-20 px-6 md:px-16 bg-black text-center">
+    <h2 className="text-4xl font-bold text-yellow-400 mb-12">
+      Customer Reviews
+    </h2>
+
+    <div className="grid md:grid-cols-3 gap-8">
+      {[
+        'Amazing taste and beautiful cafe atmosphere.',
+        'Best pizza and mocktails in town.',
+        'Family friendly place with delicious food.',
+      ].map((review, i) => (
+        <div
+          key={i}
+          className="bg-zinc-950 border border-zinc-800 p-8 rounded-3xl shadow-lg"
+        >
+          <div className="text-yellow-400 text-3xl mb-4">★★★★★</div>
+          <p className="text-gray-300">{review}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  {/* Contact */}
+  <section className="py-20 px-6 md:px-16 bg-zinc-950">
+    <div className="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h2 className="text-4xl font-bold text-yellow-400 mb-6">
+          Visit Us
+        </h2>
+
+        <p className="text-gray-300 text-lg leading-8">
+          Pizza Stand Restaurant & Cafe
+          <br />
+          Delicious food, cozy ambience & selfie point.
+        </p>
+
+        <div className="mt-8 space-y-4 text-gray-300">
+          <p>📍 Your Restaurant Location</p>
+          <p>📞 +91 XXXXX XXXXX</p>
+          <p>🕒 Open: 10 AM - 11 PM</p>
+        </div>
+      </div>
+
+      <div className="bg-zinc-900 h-80 rounded-3xl flex items-center justify-center border border-zinc-800">
+        <p className="text-gray-400 text-xl">Google Map Here</p>
+      </div>
+    </div>
+  </section>
+
+  {/* Footer */}
+  <footer className="bg-black py-8 border-t border-zinc-800 text-center">
+    <h3 className="text-2xl font-bold text-yellow-400">
+      Pizza Stand Restaurant & Cafe
+    </h3>
+
+    <p className="text-gray-500 mt-3">
+      Taste That Brings You Back Again 🍕
+    </p>
+  </footer>
+</div>
+
+) }
